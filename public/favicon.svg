@@ -1,0 +1,41 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left half - Cyan -->
+  <path
+    d="M24 4C13 4 4 13 4 24C4 35 13 44 24 44"
+    stroke="url(#gradient-left)"
+    stroke-width="3"
+    stroke-linecap="round"
+    fill="none"
+  />
+  <!-- Right half - Violet -->
+  <path
+    d="M24 4C35 4 44 13 44 24C44 35 35 44 24 44"
+    stroke="url(#gradient-right)"
+    stroke-width="3"
+    stroke-linecap="round"
+    fill="none"
+  />
+  <!-- Lightning gap / contradiction symbol -->
+  <path
+    d="M24 12L20 22H28L24 36"
+    stroke="url(#gradient-lightning)"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+  <defs>
+    <linearGradient id="gradient-left" x1="4" y1="24" x2="24" y2="24">
+      <stop stop-color="#00E5FF" />
+      <stop offset="1" stop-color="#00B8D4" />
+    </linearGradient>
+    <linearGradient id="gradient-right" x1="24" y1="24" x2="44" y2="24">
+      <stop stop-color="#A855F7" />
+      <stop offset="1" stop-color="#9333EA" />
+    </linearGradient>
+    <linearGradient id="gradient-lightning" x1="24" y1="12" x2="24" y2="36">
+      <stop stop-color="#00E5FF" />
+      <stop offset="1" stop-color="#A855F7" />
+    </linearGradient>
+  </defs>
+</svg>
