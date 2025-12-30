@@ -1,17 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Logo } from "@/components/Logo";
 import { Link, useNavigate } from "react-router-dom";
-import { Chrome, Mail, ArrowRight, Eye, EyeOff } from "lucide-react";
+import { Chrome, ArrowRight, Sparkles, Shield, Zap } from "lucide-react";
 import { toast } from "sonner";
 
 export default function Auth() {
-  const [isLogin, setIsLogin] = useState(true);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -20,20 +14,6 @@ export default function Auth() {
     // Simulate auth - in production this would use Supabase
     setTimeout(() => {
       toast.success("Welcome to ClashLens!");
-      navigate("/dashboard");
-    }, 1500);
-  };
-
-  const handleEmailAuth = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !password) {
-      toast.error("Please fill in all fields");
-      return;
-    }
-    setIsLoading(true);
-    // Simulate auth
-    setTimeout(() => {
-      toast.success(isLogin ? "Welcome back!" : "Account created successfully!");
       navigate("/dashboard");
     }, 1500);
   };
@@ -48,98 +28,42 @@ export default function Auth() {
               <Logo size="lg" className="justify-center mb-8" />
             </Link>
             <h1 className="text-3xl font-display font-bold mb-2">
-              {isLogin ? "Welcome back" : "Create your account"}
+              Welcome to ClashLens
             </h1>
             <p className="text-muted-foreground">
-              {isLogin 
-                ? "Sign in to continue your investigations" 
-                : "Start uncovering contradictions today"}
+              Sign in to start uncovering contradictions
             </p>
           </div>
 
-          {/* Google Auth */}
-          <Button 
-            variant="glass" 
-            size="lg" 
-            className="w-full" 
-            onClick={handleGoogleAuth}
-            disabled={isLoading}
-          >
-            <Chrome className="w-5 h-5" />
-            Continue with Google
-          </Button>
-
-          {/* Divider */}
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-border" />
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-4 bg-background text-muted-foreground">or continue with email</span>
+          {/* MVP Badge */}
+          <div className="flex items-center justify-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary">
+              <Sparkles className="w-4 h-4" />
+              <span>MVP Beta Access</span>
             </div>
           </div>
 
-          {/* Email Form */}
-          <form onSubmit={handleEmailAuth} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="you@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="h-12"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <div className="relative">
-                <Input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="••••••••"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="h-12 pr-12"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                </button>
-              </div>
-            </div>
+          {/* Google Auth Button */}
+          <Button 
+            variant="gradient" 
+            size="xl" 
+            className="w-full group" 
+            onClick={handleGoogleAuth}
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            ) : (
+              <>
+                <Chrome className="w-5 h-5" />
+                Continue with Google
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </>
+            )}
+          </Button>
 
-            <Button 
-              variant="gradient" 
-              size="lg" 
-              className="w-full group" 
-              type="submit"
-              disabled={isLoading}
-            >
-              {isLoading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-              ) : (
-                <>
-                  {isLogin ? "Sign In" : "Create Account"}
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </>
-              )}
-            </Button>
-          </form>
-
-          {/* Toggle */}
           <p className="text-center text-sm text-muted-foreground">
-            {isLogin ? "Don't have an account? " : "Already have an account? "}
-            <button
-              onClick={() => setIsLogin(!isLogin)}
-              className="text-primary hover:underline font-medium"
-            >
-              {isLogin ? "Sign up" : "Sign in"}
-            </button>
+            By signing in, you agree to our Terms of Service and Privacy Policy
           </p>
         </div>
       </div>
@@ -157,24 +81,30 @@ export default function Auth() {
               <h2 className="text-2xl font-display font-bold mb-4">
                 Uncover the Truth
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-6">
                 ClashLens analyzes YouTube videos to find contradicting narratives, 
                 helping you understand what's really being said — and where the conflicts lie.
               </p>
-            </div>
-            
-            <div className="grid grid-cols-3 gap-4">
-              <div className="glass-card p-4 text-center">
-                <div className="text-2xl font-display font-bold text-primary">47+</div>
-                <div className="text-xs text-muted-foreground">Videos Analyzed</div>
-              </div>
-              <div className="glass-card p-4 text-center">
-                <div className="text-2xl font-display font-bold text-violet-accent">4</div>
-                <div className="text-xs text-muted-foreground">Contradictions</div>
-              </div>
-              <div className="glass-card p-4 text-center">
-                <div className="text-2xl font-display font-bold text-sentiment-confusion">12K</div>
-                <div className="text-xs text-muted-foreground">Comments</div>
+              
+              <div className="space-y-3 text-left">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Zap className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="text-sm">Compare videos instantly</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-violet-accent/10 flex items-center justify-center">
+                    <Shield className="w-4 h-4 text-violet-accent" />
+                  </div>
+                  <span className="text-sm">Evidence-based analysis</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Sparkles className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="text-sm">AI-powered insights</span>
+                </div>
               </div>
             </div>
           </div>

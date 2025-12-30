@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/Logo";
-import { ArrowRight, Play, Zap } from "lucide-react";
+import { ArrowRight, Play, Zap, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Hero() {
@@ -16,8 +15,8 @@ export function Hero() {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary animate-fade-in">
-            <Zap className="w-4 h-4" />
-            <span>Clarity Intelligence Platform</span>
+            <Sparkles className="w-4 h-4" />
+            <span>MVP Beta — Early Access</span>
           </div>
 
           {/* Headline */}
@@ -41,7 +40,7 @@ export function Hero() {
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
-            <Link to="/demo">
+            <Link to="/results/demo-ai-regulation">
               <Button variant="glass" size="lg" className="group">
                 <Play className="w-4 h-4" />
                 See Demo Report
@@ -49,15 +48,11 @@ export function Hero() {
             </Link>
           </div>
 
-          {/* Trust Signals */}
-          <div className="pt-12 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <p className="text-sm text-muted-foreground mb-4">Trusted by researchers and fact-checkers</p>
-            <div className="flex items-center justify-center gap-8 opacity-50">
-              <span className="text-lg font-display font-semibold">Reuters</span>
-              <span className="text-lg font-display font-semibold">MIT</span>
-              <span className="text-lg font-display font-semibold">Stanford</span>
-              <span className="text-lg font-display font-semibold">BBC</span>
-            </div>
+          {/* MVP Info */}
+          <div className="pt-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            <p className="text-sm text-muted-foreground">
+              Currently in MVP beta. Core features available for testing.
+            </p>
           </div>
         </div>
       </div>

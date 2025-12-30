@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function CTA() {
@@ -11,6 +11,10 @@ export function CTA() {
           <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/20 rounded-full blur-[100px]" />
           
           <div className="glass-card-elevated p-12 md:p-16 text-center relative z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">
+              <Sparkles className="w-4 h-4" />
+              <span>MVP Beta</span>
+            </div>
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
               Ready to See Through the Noise?
             </h2>
@@ -20,12 +24,12 @@ export function CTA() {
             </p>
             <Link to="/auth">
               <Button variant="gradient" size="xl" className="group">
-                Start Free Investigation
+                Start Investigation
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
             <p className="text-sm text-muted-foreground mt-4">
-              No credit card required • Analyze up to 50 videos free
+              Free during beta • Sign in with Google
             </p>
           </div>
         </div>
