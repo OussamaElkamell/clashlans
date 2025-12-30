@@ -19,7 +19,7 @@ const features = [
   {
     icon: Zap,
     title: "Topic Scanning",
-    description: "Scan up to 200 videos on any topic to find contradictions automatically.",
+    description: "Scan multiple videos on any topic to find contradictions automatically.",
   },
   {
     icon: FileText,

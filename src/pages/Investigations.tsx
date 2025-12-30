@@ -46,7 +46,7 @@ export default function Investigations() {
                         </span>
                       )}
                       <span className="text-xs text-muted-foreground">
-                        {new Date(inv.createdAt).toLocaleDateString()}
+                        Recently
                       </span>
                     </div>
                     <h3 className="font-display font-semibold text-lg mb-1">{inv.title}</h3>
