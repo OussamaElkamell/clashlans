@@ -19,7 +19,7 @@ const buttonVariants = cva(
         glow: "bg-primary text-primary-foreground shadow-lg shadow-primary/40 hover:shadow-primary/60 hover:scale-[1.02] active:scale-[0.98]",
         "glow-outline": "border border-primary/50 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary shadow-lg shadow-primary/20",
         glass: "bg-card/60 backdrop-blur-xl border border-border/50 text-foreground hover:bg-card/80 hover:border-border",
-        gradient: "bg-gradient-to-r from-[hsl(187,100%,45%)] to-[hsl(270,70%,60%)] text-white shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]",
+        gradient: "bg-gradient-to-r from-[hsl(187,85%,40%)] to-[hsl(270,65%,55%)] text-white shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]",
         "narrative-a": "bg-narrative-a/10 text-narrative-a border border-narrative-a/30 hover:bg-narrative-a/20",
         "narrative-b": "bg-violet-accent/10 text-violet-accent border border-violet-accent/30 hover:bg-violet-accent/20",
       },
