@@ -14,8 +14,9 @@ export default function Terms() {
             <p className="text-muted-foreground">Last updated: January 2026</p>
           </div>
 
-          <div className="prose prose-gray max-w-none space-y-8">
-            <section className="glass-card p-8">
+          {/* Single Card with all content */}
+          <div className="glass-card p-8 prose prose-gray max-w-none">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">1. Acceptance of Terms</h2>
               <p className="text-muted-foreground">
                 By accessing or using ClashLens, you agree to be bound by these Terms of Service. If you do not agree 
@@ -23,7 +24,7 @@ export default function Terms() {
               </p>
             </section>
 
-            <section className="glass-card p-8">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">2. Description of Service</h2>
               <p className="text-muted-foreground">
                 ClashLens is a platform that analyzes publicly available YouTube content to identify and present 
@@ -32,7 +33,7 @@ export default function Terms() {
               </p>
             </section>
 
-            <section className="glass-card p-8">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">3. User Responsibilities</h2>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                 <li>You must provide accurate account information</li>
@@ -43,7 +44,7 @@ export default function Terms() {
               </ul>
             </section>
 
-            <section className="glass-card p-8">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">4. YouTube API Compliance</h2>
               <p className="text-muted-foreground mb-4">
                 Our service uses YouTube API Services. By using ClashLens, you agree to comply with:
@@ -62,10 +63,10 @@ export default function Terms() {
               </ul>
             </section>
 
-            <section className="glass-card p-8">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">5. Expert Response Mode</h2>
               <p className="text-muted-foreground mb-4">
-                If you use the Expert Response Mode feature (when available), you agree to:
+                If you use the Expert Response Mode feature, you agree to:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                 <li>Manually review and edit all AI-suggested responses before publishing</li>
@@ -76,7 +77,7 @@ export default function Terms() {
               </ul>
             </section>
 
-            <section className="glass-card p-8">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">6. Intellectual Property</h2>
               <p className="text-muted-foreground">
                 ClashLens and its original content, features, and functionality are owned by ClashLens and are protected 
@@ -85,7 +86,7 @@ export default function Terms() {
               </p>
             </section>
 
-            <section className="glass-card p-8">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">7. Disclaimer</h2>
               <p className="text-muted-foreground">
                 ClashLens provides analytical tools and does not verify the accuracy of claims in analyzed videos. 
@@ -94,7 +95,7 @@ export default function Terms() {
               </p>
             </section>
 
-            <section className="glass-card p-8">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">8. Limitation of Liability</h2>
               <p className="text-muted-foreground">
                 ClashLens shall not be liable for any indirect, incidental, special, consequential, or punitive damages 
@@ -102,7 +103,7 @@ export default function Terms() {
               </p>
             </section>
 
-            <section className="glass-card p-8">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">9. Termination</h2>
               <p className="text-muted-foreground">
                 We reserve the right to terminate or suspend your account at any time for violations of these terms or 
@@ -110,7 +111,7 @@ export default function Terms() {
               </p>
             </section>
 
-            <section className="glass-card p-8">
+            <section>
               <h2 className="text-xl font-display font-bold mb-4">10. Contact</h2>
               <p className="text-muted-foreground">
                 For questions about these Terms, please contact us at{" "}
