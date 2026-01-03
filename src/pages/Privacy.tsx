@@ -14,8 +14,9 @@ export default function Privacy() {
             <p className="text-muted-foreground">Last updated: January 2026</p>
           </div>
 
-          <div className="prose prose-gray max-w-none space-y-8">
-            <section className="glass-card p-8">
+          {/* Single Card with all content */}
+          <div className="glass-card p-8 prose prose-gray max-w-none">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">1. Information We Collect</h2>
               <p className="text-muted-foreground mb-4">
                 When you use ClashLens, we collect information necessary to provide our services:
@@ -27,7 +28,7 @@ export default function Privacy() {
               </ul>
             </section>
 
-            <section className="glass-card p-8">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">2. How We Use Your Information</h2>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                 <li>To provide and maintain ClashLens services</li>
@@ -38,7 +39,7 @@ export default function Privacy() {
               </ul>
             </section>
 
-            <section className="glass-card p-8">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">3. YouTube API Services</h2>
               <p className="text-muted-foreground mb-4">
                 ClashLens uses YouTube API Services to analyze publicly available video content. By using our service, you also agree to be bound by the 
@@ -55,7 +56,7 @@ export default function Privacy() {
               </p>
             </section>
 
-            <section className="glass-card p-8">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">4. Data Security</h2>
               <p className="text-muted-foreground">
                 We implement appropriate technical and organizational measures to protect your personal information. 
@@ -64,7 +65,7 @@ export default function Privacy() {
               </p>
             </section>
 
-            <section className="glass-card p-8">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">5. Data Retention</h2>
               <p className="text-muted-foreground">
                 We retain your personal information only for as long as necessary to provide our services and fulfill 
@@ -72,7 +73,7 @@ export default function Privacy() {
               </p>
             </section>
 
-            <section className="glass-card p-8">
+            <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">6. Your Rights</h2>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                 <li>Access and receive a copy of your personal data</li>
@@ -83,7 +84,7 @@ export default function Privacy() {
               </ul>
             </section>
 
-            <section className="glass-card p-8">
+            <section>
               <h2 className="text-xl font-display font-bold mb-4">7. Contact Us</h2>
               <p className="text-muted-foreground">
                 If you have questions about this Privacy Policy, please contact us at{" "}

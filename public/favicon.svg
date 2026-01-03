@@ -1,41 +1,64 @@
 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Left half - Cyan -->
+  <!-- Outer ring -->
+  <circle
+    cx="24"
+    cy="24"
+    r="20"
+    stroke="url(#ring-gradient)"
+    stroke-width="2"
+    fill="none"
+    opacity="0.3"
+  />
+  
+  <!-- Left lens half -->
   <path
-    d="M24 4C13 4 4 13 4 24C4 35 13 44 24 44"
-    stroke="url(#gradient-left)"
-    stroke-width="3"
+    d="M24 6C13.5 6 5 14.5 5 24C5 33.5 13.5 42 24 42"
+    stroke="url(#left-gradient)"
+    stroke-width="3.5"
     stroke-linecap="round"
     fill="none"
   />
-  <!-- Right half - Violet -->
+  
+  <!-- Right lens half -->
   <path
-    d="M24 4C35 4 44 13 44 24C44 35 35 44 24 44"
-    stroke="url(#gradient-right)"
-    stroke-width="3"
+    d="M24 6C34.5 6 43 14.5 43 24C43 33.5 34.5 42 24 42"
+    stroke="url(#right-gradient)"
+    stroke-width="3.5"
     stroke-linecap="round"
     fill="none"
   />
-  <!-- Lightning gap / contradiction symbol -->
+  
+  <!-- Center clash symbol -->
   <path
-    d="M24 12L20 22H28L24 36"
-    stroke="url(#gradient-lightning)"
-    stroke-width="2.5"
+    d="M24 14L19 23H29L24 34"
+    stroke="url(#clash-gradient)"
+    stroke-width="3"
     stroke-linecap="round"
     stroke-linejoin="round"
     fill="none"
   />
+  
+  <!-- Inner glow dots -->
+  <circle cx="16" cy="24" r="2" fill="url(#left-gradient)" opacity="0.6" />
+  <circle cx="32" cy="24" r="2" fill="url(#right-gradient)" opacity="0.6" />
+  
   <defs>
-    <linearGradient id="gradient-left" x1="4" y1="24" x2="24" y2="24">
-      <stop stop-color="#00E5FF" />
-      <stop offset="1" stop-color="#00B8D4" />
-    </linearGradient>
-    <linearGradient id="gradient-right" x1="24" y1="24" x2="44" y2="24">
-      <stop stop-color="#A855F7" />
-      <stop offset="1" stop-color="#9333EA" />
-    </linearGradient>
-    <linearGradient id="gradient-lightning" x1="24" y1="12" x2="24" y2="36">
-      <stop stop-color="#00E5FF" />
+    <linearGradient id="ring-gradient" x1="4" y1="24" x2="44" y2="24">
+      <stop stop-color="#6366F1" />
       <stop offset="1" stop-color="#A855F7" />
+    </linearGradient>
+    <linearGradient id="left-gradient" x1="5" y1="24" x2="24" y2="24">
+      <stop stop-color="#818CF8" />
+      <stop offset="1" stop-color="#6366F1" />
+    </linearGradient>
+    <linearGradient id="right-gradient" x1="24" y1="24" x2="43" y2="24">
+      <stop stop-color="#A855F7" />
+      <stop offset="1" stop-color="#C026D3" />
+    </linearGradient>
+    <linearGradient id="clash-gradient" x1="24" y1="14" x2="24" y2="34">
+      <stop stop-color="#818CF8" />
+      <stop offset="0.5" stop-color="#A855F7" />
+      <stop offset="1" stop-color="#C026D3" />
     </linearGradient>
   </defs>
 </svg>
