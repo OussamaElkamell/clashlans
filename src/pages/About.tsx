@@ -1,0 +1,103 @@
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/landing/Footer";
+import { Target, Users, Shield, Lightbulb } from "lucide-react";
+
+export default function About() {
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      
+      <main className="pt-24 pb-16 px-4">
+        <div className="container max-w-4xl">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">About ClashLens</h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              A clarity and consistency intelligence platform helping understand contradictory narratives across video content.
+            </p>
+          </div>
+
+          {/* Mission */}
+          <section className="glass-card p-8 mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <Target className="w-6 h-6 text-primary" />
+              <h2 className="text-2xl font-display font-bold">Our Mission</h2>
+            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              ClashLens helps journalists, researchers, fact-checkers, educators, and curious users detect and understand 
+              contradictory narratives across YouTube videos. We don't tell you who is right — we help you understand 
+              where disagreement comes from and what each side claims.
+            </p>
+          </section>
+
+          {/* What We Do */}
+          <section className="glass-card p-8 mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <Lightbulb className="w-6 h-6 text-primary" />
+              <h2 className="text-2xl font-display font-bold">What We Do</h2>
+            </div>
+            <ul className="space-y-3 text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                <span>Identify which videos make opposing claims on the same topic</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                <span>Extract and compare main narratives from each perspective</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                <span>Pinpoint specific contradictions (claim vs. claim)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                <span>Analyze audience reactions and confusion in comment sections</span>
+              </li>
+            </ul>
+          </section>
+
+          {/* Who We Serve */}
+          <section className="glass-card p-8 mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <Users className="w-6 h-6 text-primary" />
+              <h2 className="text-2xl font-display font-bold">Who We Serve</h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="p-4 rounded-xl bg-muted/50">
+                <h3 className="font-semibold mb-1">Journalists</h3>
+                <p className="text-sm text-muted-foreground">Research opposing viewpoints for balanced reporting</p>
+              </div>
+              <div className="p-4 rounded-xl bg-muted/50">
+                <h3 className="font-semibold mb-1">Researchers</h3>
+                <p className="text-sm text-muted-foreground">Study narrative patterns and public discourse</p>
+              </div>
+              <div className="p-4 rounded-xl bg-muted/50">
+                <h3 className="font-semibold mb-1">Fact-Checkers</h3>
+                <p className="text-sm text-muted-foreground">Identify claims that need verification</p>
+              </div>
+              <div className="p-4 rounded-xl bg-muted/50">
+                <h3 className="font-semibold mb-1">Educators</h3>
+                <p className="text-sm text-muted-foreground">Teach media literacy and critical thinking</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Important Note */}
+          <section className="glass-card p-8">
+            <div className="flex items-center gap-3 mb-4">
+              <Shield className="w-6 h-6 text-primary" />
+              <h2 className="text-2xl font-display font-bold">Our Commitment</h2>
+            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              ClashLens is <strong>not</strong> a growth tool or engagement manipulation platform. We are committed to 
+              providing clarity and understanding, not influencing opinions. Our analysis is neutral and evidence-based, 
+              helping users form their own informed conclusions.
+            </p>
+          </section>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
