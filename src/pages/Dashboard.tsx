@@ -125,32 +125,7 @@ export default function Dashboard() {
                     <Plus className="w-6 h-6 text-primary" />
                   </div>
                   <p className="font-display font-semibold">Start New Investigation</p>
-                  <p className="text-sm text-muted-foreground">Topic scan or direct compare</p>
-                </div>
-              </Link>
-            </div>
-          </section>
-
-          {/* Quick Actions */}
-          <section className="mt-12">
-            <h2 className="text-lg font-display font-semibold text-muted-foreground mb-4">Quick Actions</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <Link to="/new-investigation">
-                <div className="glass-card p-5 hover-lift cursor-pointer">
-                  <h3 className="font-display font-semibold mb-2">Topic Scan</h3>
-                  <p className="text-sm text-muted-foreground">Scan 20-200 videos on any topic for contradictions</p>
-                </div>
-              </Link>
-              <Link to="/new-investigation">
-                <div className="glass-card p-5 hover-lift cursor-pointer">
-                  <h3 className="font-display font-semibold mb-2">Direct Compare</h3>
-                  <p className="text-sm text-muted-foreground">Compare two specific videos side-by-side</p>
-                </div>
-              </Link>
-              <Link to="/demo">
-                <div className="glass-card p-5 hover-lift cursor-pointer">
-                  <h3 className="font-display font-semibold mb-2">View Demo</h3>
-                  <p className="text-sm text-muted-foreground">See a complete AI regulation investigation</p>
+                  <p className="text-sm text-muted-foreground">Compare two videos</p>
                 </div>
               </Link>
             </div>
