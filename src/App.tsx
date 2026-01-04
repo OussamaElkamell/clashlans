@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
+import AuthCallback from "./pages/AuthCallback";
 import Dashboard from "./pages/Dashboard";
 import NewInvestigation from "./pages/NewInvestigation";
 import Progress from "./pages/Progress";
@@ -30,6 +31,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/auth/callback" element={<AuthCallback />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/new-investigation" element={<NewInvestigation />} />
           <Route path="/progress" element={<Progress />} />
@@ -38,7 +40,7 @@ const App = () => (
           <Route path="/deep-dive/:contradictionId" element={<DeepDive />} />
           <Route path="/investigations" element={<Investigations />} />
           <Route path="/settings" element={<Settings />} />
-          
+
           <Route path="/about" element={<About />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />

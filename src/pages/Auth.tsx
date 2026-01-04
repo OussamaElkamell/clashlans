@@ -11,11 +11,32 @@ export default function Auth() {
 
   const handleGoogleAuth = () => {
     setIsLoading(true);
-    // Simulate auth - in production this would use Supabase
-    setTimeout(() => {
-      toast.success("Welcome to ClashLens!");
-      navigate("/dashboard");
-    }, 1500);
+
+    // Get Client ID from environment variables
+    const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+
+    if (!clientId) {
+      toast.error("Google Client ID is not configured");
+      setIsLoading(false);
+      return;
+    }
+
+    // Direct OAuth endpoint
+    const targetUrl = "https://accounts.google.com/o/oauth2/v2/auth";
+    const redirectUri = `${window.location.origin}/auth/callback`;
+
+    // Construct params
+    const params = new URLSearchParams({
+      client_id: clientId,
+      redirect_uri: redirectUri,
+      response_type: "token", // Implicit flow
+      scope: "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email",
+      include_granted_scopes: "true",
+      state: "random_state_string", // In production, use a cryptographic nonce
+    });
+
+    // Redirect
+    window.location.href = `${targetUrl}?${params.toString()}`;
   };
 
   return (
@@ -44,10 +65,10 @@ export default function Auth() {
           </div>
 
           {/* Google Auth Button */}
-          <Button 
-            variant="gradient" 
-            size="xl" 
-            className="w-full group" 
+          <Button
+            variant="gradient"
+            size="xl"
+            className="w-full group"
             onClick={handleGoogleAuth}
             disabled={isLoading}
           >
@@ -73,7 +94,7 @@ export default function Auth() {
         {/* Background Effects */}
         <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary/30 rounded-full blur-[100px] animate-float" />
         <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-violet-accent/30 rounded-full blur-[80px] animate-float" style={{ animationDelay: "1s" }} />
-        
+
         {/* Content */}
         <div className="absolute inset-0 flex items-center justify-center p-12">
           <div className="max-w-md space-y-6 text-center">
@@ -82,10 +103,10 @@ export default function Auth() {
                 Uncover the Truth
               </h2>
               <p className="text-muted-foreground mb-6">
-                ClashLens analyzes YouTube videos to find contradicting narratives, 
+                ClashLens analyzes YouTube videos to find contradicting narratives,
                 helping you understand what's really being said — and where the conflicts lie.
               </p>
-              
+
               <div className="space-y-3 text-left">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
