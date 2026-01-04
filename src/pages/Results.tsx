@@ -13,6 +13,7 @@ import {
   commentIntelligence 
 } from "@/data/mockData";
 import { cn } from "@/lib/utils";
+import { ExpertResponsePanel } from "@/components/ExpertResponsePanel";
 
 export default function Results() {
   const { id } = useParams();
@@ -354,6 +355,11 @@ export default function Results() {
           {activeTab === "comments" && (
             <CommentIntelligenceSection />
           )}
+
+          {/* Expert Response Panel - Available for this investigation */}
+          <section className="mt-8">
+            <ExpertResponsePanel />
+          </section>
         </div>
       </main>
     </div>

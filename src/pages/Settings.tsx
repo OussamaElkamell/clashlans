@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { User, Bell, Shield, LogOut, Trash2, Lock, MessageSquare, ArrowRight } from "lucide-react";
+import { User, Bell, Shield, LogOut, Trash2, Lock } from "lucide-react";
 import { toast } from "sonner";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Settings() {
   const [notifications, setNotifications] = useState(true);
@@ -97,24 +97,6 @@ export default function Settings() {
                 Delete Account
               </Button>
             </div>
-          </section>
-
-          {/* Expert Response Mode - Link to full page */}
-          <section className="glass-card p-6 mb-6 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-violet-500/5" />
-            <Link to="/expert-response" className="relative z-10 block">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3 mb-4">
-                  <MessageSquare className="w-5 h-5 text-primary" />
-                  <h2 className="text-xl font-display font-semibold">Expert Response Mode</h2>
-                </div>
-                <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              </div>
-              <p className="text-muted-foreground">
-                Draft and publish neutral, evidence-based clarifications in YouTube comment threads. 
-                Help audiences understand where disagreement comes from — not who is right.
-              </p>
-            </Link>
           </section>
 
           {/* Logout */}
