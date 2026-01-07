@@ -65,13 +65,13 @@ export default function Dashboard() {
                       <div className="text-2xl font-display font-bold text-primary">
                         {executiveSummary.totalCommentsAnalyzed.toLocaleString()}
                       </div>
-                      <div className="text-xs text-muted-foreground">Comments Analyzed</div>
+                      <div className="text-xs text-muted-foreground">Public Comments Analyzed</div>
                     </div>
                     <div className="flex-1 glass-card p-4 text-center">
                       <div className="text-2xl font-display font-bold text-sentiment-agreement capitalize">
-                        {executiveSummary.confidence}
+                        High
                       </div>
-                      <div className="text-xs text-muted-foreground">Confidence</div>
+                      <div className="text-xs text-muted-foreground">Consistency in Analysis</div>
                     </div>
                   </div>
                 </div>
