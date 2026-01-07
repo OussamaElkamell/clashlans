@@ -100,13 +100,12 @@ export default function Results() {
                 </div>
                 <div className="p-4 rounded-xl bg-muted/50">
                   <MessageSquare className="w-5 h-5 text-muted-foreground mb-2" />
-                  <div className="text-2xl font-display font-bold">{executiveSummary.totalCommentsAnalyzed.toLocaleString()}</div>
-                  <div className="text-sm text-muted-foreground">Public Comments Analyzed</div>
+                  <div className="text-sm font-medium">Public comments included in analysis</div>
                 </div>
                 <div className="p-4 rounded-xl bg-muted/50">
                   <AlertTriangle className="w-5 h-5 text-sentiment-confusion mb-2" />
-                  <div className="text-2xl font-display font-bold text-sentiment-confusion">847</div>
-                  <div className="text-sm text-muted-foreground">Audience Confusion Indicators</div>
+                  <div className="text-2xl font-display font-bold text-sentiment-confusion">High</div>
+                  <div className="text-sm text-muted-foreground">Audience Confusion Level</div>
                 </div>
               </div>
             </div>
@@ -394,7 +393,7 @@ function CommentIntelligenceSection() {
             {commentIntelligence.confusionSignals.topQuestions.map((q, i) => (
               <div key={i} className="flex items-center justify-between p-4 rounded-lg bg-sentiment-confusion/5 border border-sentiment-confusion/20">
                 <p className="text-sm italic">"{q.text}"</p>
-                <span className="text-sm font-medium text-sentiment-confusion">{q.count} similar</span>
+                <span className="text-sm font-medium text-sentiment-confusion">{q.frequency}</span>
               </div>
             ))}
           </div>
@@ -468,7 +467,7 @@ function CommentIntelligenceSection() {
               {commentIntelligence.narrativeEchoes.sideA.map((item, i) => (
                 <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-narrative-a/5">
                   <span className="text-sm">"{item.phrase}"</span>
-                  <span className="text-xs font-medium text-narrative-a">{item.count.toLocaleString()} mentions</span>
+                  <span className="text-xs font-medium text-narrative-a">{item.frequency}</span>
                 </div>
               ))}
             </div>
@@ -484,7 +483,7 @@ function CommentIntelligenceSection() {
               {commentIntelligence.narrativeEchoes.sideB.map((item, i) => (
                 <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-violet-accent/5">
                   <span className="text-sm">"{item.phrase}"</span>
-                  <span className="text-xs font-medium text-violet-accent">{item.count.toLocaleString()} mentions</span>
+                  <span className="text-xs font-medium text-violet-accent">{item.frequency}</span>
                 </div>
               ))}
             </div>
@@ -508,13 +507,13 @@ function CommentIntelligenceSection() {
                 <div key={i}>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-sm">{item.tone}</span>
-                    <span className="text-xs text-muted-foreground">{item.percentage}%</span>
+                    <span className="text-xs text-muted-foreground">{item.level}</span>
                   </div>
                   <div className="h-2 bg-muted rounded-full overflow-hidden">
                     <div 
                       className="h-full rounded-full transition-all duration-500"
                       style={{ 
-                        width: `${item.percentage}%`,
+                        width: `${item.width}%`,
                         backgroundColor: item.color 
                       }}
                     />
@@ -535,13 +534,13 @@ function CommentIntelligenceSection() {
                 <div key={i}>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-sm">{item.tone}</span>
-                    <span className="text-xs text-muted-foreground">{item.percentage}%</span>
+                    <span className="text-xs text-muted-foreground">{item.level}</span>
                   </div>
                   <div className="h-2 bg-muted rounded-full overflow-hidden">
                     <div 
                       className="h-full rounded-full transition-all duration-500"
                       style={{ 
-                        width: `${item.percentage}%`,
+                        width: `${item.width}%`,
                         backgroundColor: item.color 
                       }}
                     />

@@ -62,10 +62,9 @@ export default function Dashboard() {
                   {/* Mini Stats */}
                   <div className="flex flex-row lg:flex-col gap-4 lg:min-w-[200px]">
                     <div className="flex-1 glass-card p-4 text-center">
-                      <div className="text-2xl font-display font-bold text-primary">
-                        {executiveSummary.totalCommentsAnalyzed.toLocaleString()}
+                      <div className="text-sm font-medium text-primary">
+                        Public comments included in analysis
                       </div>
-                      <div className="text-xs text-muted-foreground">Public Comments Analyzed</div>
                     </div>
                     <div className="flex-1 glass-card p-4 text-center">
                       <div className="text-2xl font-display font-bold text-sentiment-agreement capitalize">
