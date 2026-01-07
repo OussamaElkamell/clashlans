@@ -192,10 +192,10 @@ export const narrativeSplitData = {
 export const commentIntelligence = {
   confusionSignals: {
     topQuestions: [
-      { text: "So should I be worried about AI or not? Every video says something different.", count: 847 },
-      { text: "Is this the same AI we use in ChatGPT? I'm confused about what exactly is dangerous.", count: 623 },
-      { text: "If AI is so dangerous, why are they still building it?", count: 512 },
-      { text: "Which experts should I trust? Both sides have PhDs.", count: 489 },
+      { text: "So should I be worried about AI or not? Every video says something different.", frequency: "Frequently observed" },
+      { text: "Is this the same AI we use in ChatGPT? I'm confused about what exactly is dangerous.", frequency: "Common" },
+      { text: "If AI is so dangerous, why are they still building it?", frequency: "Common" },
+      { text: "Which experts should I trust? Both sides have PhDs.", frequency: "Moderately observed" },
     ],
     exampleComments: [
       { text: "I watched 10 videos on this and I'm more confused than when I started...", likes: 2341, side: "neutral" },
@@ -226,34 +226,34 @@ export const commentIntelligence = {
   },
   narrativeEchoes: {
     sideA: [
-      { phrase: "we need to slow down", count: 3421 },
-      { phrase: "alignment is unsolved", count: 2156 },
-      { phrase: "existential threat", count: 1987 },
-      { phrase: "regulate now", count: 1654 },
+      { phrase: "we need to slow down", frequency: "Widely echoed" },
+      { phrase: "alignment is unsolved", frequency: "Common" },
+      { phrase: "existential threat", frequency: "Common" },
+      { phrase: "regulate now", frequency: "Moderately observed" },
     ],
     sideB: [
-      { phrase: "can't stop progress", count: 2987 },
-      { phrase: "fear mongering", count: 2341 },
-      { phrase: "China will win", count: 1876 },
-      { phrase: "overblown concerns", count: 1543 },
+      { phrase: "can't stop progress", frequency: "Widely echoed" },
+      { phrase: "fear mongering", frequency: "Common" },
+      { phrase: "China will win", frequency: "Common" },
+      { phrase: "overblown concerns", frequency: "Moderately observed" },
     ],
     overlap: [
-      { phrase: "AI is powerful", countA: 1234, countB: 1456 },
-      { phrase: "jobs will change", countA: 987, countB: 1123 },
+      { phrase: "AI is powerful", frequencyA: "Common", frequencyB: "Common" },
+      { phrase: "jobs will change", frequencyA: "Moderately observed", frequencyB: "Common" },
     ],
   },
   toneAnalysis: {
     sideA: [
-      { tone: "Concerned", percentage: 35, color: "hsl(var(--confusion))" },
-      { tone: "Analytical", percentage: 28, color: "hsl(var(--narrative-a))" },
-      { tone: "Urgent", percentage: 22, color: "hsl(var(--destructive))" },
-      { tone: "Hopeful", percentage: 15, color: "hsl(var(--agreement))" },
+      { tone: "Concerned", level: "High", width: 85, color: "hsl(var(--confusion))" },
+      { tone: "Analytical", level: "Medium", width: 68, color: "hsl(var(--narrative-a))" },
+      { tone: "Urgent", level: "Medium", width: 55, color: "hsl(var(--destructive))" },
+      { tone: "Hopeful", level: "Low", width: 38, color: "hsl(var(--agreement))" },
     ],
     sideB: [
-      { tone: "Optimistic", percentage: 32, color: "hsl(var(--agreement))" },
-      { tone: "Dismissive", percentage: 26, color: "hsl(var(--muted-foreground))" },
-      { tone: "Frustrated", percentage: 24, color: "hsl(var(--destructive))" },
-      { tone: "Skeptical", percentage: 18, color: "hsl(var(--confusion))" },
+      { tone: "Optimistic", level: "High", width: 80, color: "hsl(var(--agreement))" },
+      { tone: "Dismissive", level: "Medium", width: 65, color: "hsl(var(--muted-foreground))" },
+      { tone: "Frustrated", level: "Medium", width: 60, color: "hsl(var(--destructive))" },
+      { tone: "Skeptical", level: "Low", width: 45, color: "hsl(var(--confusion))" },
     ],
   },
   representativeComments: {
