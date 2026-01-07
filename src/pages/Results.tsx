@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Link, useParams } from "react-router-dom";
 import { 
   ArrowRight, Download, Share2, AlertTriangle, CheckCircle, 
-  TrendingUp, MessageSquare, Eye, Zap, ChevronDown, ChevronUp 
+  TrendingUp, MessageSquare, Eye, Zap, ChevronDown, ChevronUp,
+  Info
 } from "lucide-react";
 import { 
   executiveSummary, 
@@ -26,6 +27,16 @@ export default function Results() {
       
       <main className="pt-24 pb-16 px-4">
         <div className="container max-w-7xl">
+          {/* Research Disclaimer */}
+          <div className="mb-6 p-4 rounded-xl bg-primary/5 border border-primary/20">
+            <div className="flex items-start gap-3">
+              <Info className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-muted-foreground">
+                <span className="font-medium text-foreground">Disclaimer:</span> The analyses and indicators presented by ClashLens are qualitative research outputs generated from publicly available content. They are not official YouTube metrics, do not replace or replicate YouTube analytics, and should not be interpreted as performance or ranking measures.
+              </p>
+            </div>
+          </div>
+
           {/* Executive Summary */}
           <section className="mb-12">
             <div className="glass-card-elevated p-8">
@@ -44,14 +55,14 @@ export default function Results() {
                         ? "bg-sentiment-confusion/20 text-sentiment-confusion"
                         : "bg-muted text-muted-foreground"
                     )}>
-                      {executiveSummary.confidence === "high" ? "High" : executiveSummary.confidence === "medium" ? "Medium" : "Low"} Confidence
+                      {executiveSummary.confidence === "high" ? "High Consistency in Analysis" : executiveSummary.confidence === "medium" ? "Medium Consistency" : "Low Consistency"}
                     </span>
                   </div>
                   <h1 className="text-3xl md:text-4xl font-display font-bold mb-3">
                     AI Regulation: Innovation vs Safety
                   </h1>
                   <p className="text-xl text-muted-foreground mb-6">
-                    We found <span className="text-primary font-semibold">{executiveSummary.contradictionClusters} contradiction clusters</span> across {executiveSummary.totalVideosAnalyzed} videos
+                    We found <span className="text-primary font-semibold">{executiveSummary.contradictionClusters} contradiction analysis groups</span> across {executiveSummary.totalVideosAnalyzed} videos
                   </p>
                   
                   {/* Main Tension */}
@@ -65,7 +76,7 @@ export default function Results() {
                 <div className="flex flex-col gap-3 lg:min-w-[200px]">
                   <Button variant="gradient" className="group">
                     <Download className="w-4 h-4" />
-                    Export Report
+                    Export Research Summary
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                   <Button variant="glass">
@@ -85,17 +96,17 @@ export default function Results() {
                 <div className="p-4 rounded-xl bg-muted/50">
                   <Zap className="w-5 h-5 text-primary mb-2" />
                   <div className="text-2xl font-display font-bold text-primary">{executiveSummary.contradictionClusters}</div>
-                  <div className="text-sm text-muted-foreground">Contradictions</div>
+                  <div className="text-sm text-muted-foreground">Contradictions Found</div>
                 </div>
                 <div className="p-4 rounded-xl bg-muted/50">
                   <MessageSquare className="w-5 h-5 text-muted-foreground mb-2" />
                   <div className="text-2xl font-display font-bold">{executiveSummary.totalCommentsAnalyzed.toLocaleString()}</div>
-                  <div className="text-sm text-muted-foreground">Comments</div>
+                  <div className="text-sm text-muted-foreground">Public Comments Analyzed</div>
                 </div>
                 <div className="p-4 rounded-xl bg-muted/50">
                   <AlertTriangle className="w-5 h-5 text-sentiment-confusion mb-2" />
                   <div className="text-2xl font-display font-bold text-sentiment-confusion">847</div>
-                  <div className="text-sm text-muted-foreground">Confusion Signals</div>
+                  <div className="text-sm text-muted-foreground">Audience Confusion Indicators</div>
                 </div>
               </div>
             </div>
@@ -112,7 +123,7 @@ export default function Results() {
                   : "bg-muted text-muted-foreground hover:text-foreground"
               )}
             >
-              Contradiction Map
+              Contradiction Analysis
             </button>
             <button
               onClick={() => setActiveTab("comments")}
@@ -123,7 +134,7 @@ export default function Results() {
                   : "bg-muted text-muted-foreground hover:text-foreground"
               )}
             >
-              Comment Intelligence
+              Comment Research
             </button>
           </div>
 
@@ -131,7 +142,7 @@ export default function Results() {
             <>
               {/* Contradiction Cards */}
               <section className="mb-12">
-                <h2 className="text-xl font-display font-semibold mb-6">Contradiction Clusters</h2>
+                <h2 className="text-xl font-display font-semibold mb-6">Contradiction Analysis Groups</h2>
                 <div className="space-y-4">
                   {contradictionCards.map((card) => (
                     <div key={card.id} className="glass-card overflow-hidden">
@@ -201,7 +212,7 @@ export default function Results() {
                                     />
                                     <div className="flex-1 min-w-0">
                                       <p className="text-sm font-medium truncate">{video.title}</p>
-                                      <p className="text-xs text-muted-foreground">{video.channel} • {video.views} views</p>
+                                      <p className="text-xs text-muted-foreground">{video.channel}</p>
                                     </div>
                                   </div>
                                 ))}
@@ -221,7 +232,7 @@ export default function Results() {
                                     />
                                     <div className="flex-1 min-w-0">
                                       <p className="text-sm font-medium truncate">{video.title}</p>
-                                      <p className="text-xs text-muted-foreground">{video.channel} • {video.views} views</p>
+                                      <p className="text-xs text-muted-foreground">{video.channel}</p>
                                     </div>
                                   </div>
                                 ))}
@@ -278,7 +289,7 @@ export default function Results() {
                           {narrativeSplitData.narrativeA.topVideos.map((video, i) => (
                             <div key={i} className="p-3 rounded-lg bg-muted/50 text-sm">
                               <p className="font-medium">{video.title}</p>
-                              <p className="text-xs text-muted-foreground">{video.channel} • {video.views} views</p>
+                              <p className="text-xs text-muted-foreground">{video.channel}</p>
                             </div>
                           ))}
                         </div>
@@ -328,7 +339,7 @@ export default function Results() {
                           {narrativeSplitData.narrativeB.topVideos.map((video, i) => (
                             <div key={i} className="p-3 rounded-lg bg-muted/50 text-sm">
                               <p className="font-medium">{video.title}</p>
-                              <p className="text-xs text-muted-foreground">{video.channel} • {video.views} views</p>
+                              <p className="text-xs text-muted-foreground">{video.channel}</p>
                             </div>
                           ))}
                         </div>
@@ -369,11 +380,11 @@ export default function Results() {
 function CommentIntelligenceSection() {
   return (
     <div className="space-y-8">
-      {/* Confusion Signals */}
+      {/* Audience Confusion Indicators */}
       <section className="glass-card p-6">
         <div className="flex items-center gap-3 mb-6">
           <AlertTriangle className="w-6 h-6 text-sentiment-confusion" />
-          <h3 className="text-xl font-display font-semibold">Audience Confusion Signals</h3>
+          <h3 className="text-xl font-display font-semibold">Audience Confusion Indicators</h3>
         </div>
 
         {/* Top Questions */}
@@ -383,7 +394,7 @@ function CommentIntelligenceSection() {
             {commentIntelligence.confusionSignals.topQuestions.map((q, i) => (
               <div key={i} className="flex items-center justify-between p-4 rounded-lg bg-sentiment-confusion/5 border border-sentiment-confusion/20">
                 <p className="text-sm italic">"{q.text}"</p>
-                <span className="text-sm font-medium text-sentiment-confusion">{q.count}</span>
+                <span className="text-sm font-medium text-sentiment-confusion">{q.count} similar</span>
               </div>
             ))}
           </div>
@@ -405,9 +416,9 @@ function CommentIntelligenceSection() {
         </div>
       </section>
 
-      {/* Agreement & Disagreement */}
+      {/* Agreement & Disagreement Patterns */}
       <section className="glass-card p-6">
-        <h3 className="text-xl font-display font-semibold mb-6">Agreement vs Disagreement Patterns</h3>
+        <h3 className="text-xl font-display font-semibold mb-6">Observed Agreement & Disagreement Patterns</h3>
         
         <div className="grid md:grid-cols-2 gap-6">
           {/* Agreements */}
@@ -457,7 +468,7 @@ function CommentIntelligenceSection() {
               {commentIntelligence.narrativeEchoes.sideA.map((item, i) => (
                 <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-narrative-a/5">
                   <span className="text-sm">"{item.phrase}"</span>
-                  <span className="text-xs font-medium text-narrative-a">{item.count.toLocaleString()}</span>
+                  <span className="text-xs font-medium text-narrative-a">{item.count.toLocaleString()} mentions</span>
                 </div>
               ))}
             </div>
@@ -473,7 +484,7 @@ function CommentIntelligenceSection() {
               {commentIntelligence.narrativeEchoes.sideB.map((item, i) => (
                 <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-violet-accent/5">
                   <span className="text-sm">"{item.phrase}"</span>
-                  <span className="text-xs font-medium text-violet-accent">{item.count.toLocaleString()}</span>
+                  <span className="text-xs font-medium text-violet-accent">{item.count.toLocaleString()} mentions</span>
                 </div>
               ))}
             </div>
@@ -481,9 +492,9 @@ function CommentIntelligenceSection() {
         </div>
       </section>
 
-      {/* Tone Analysis */}
+      {/* Audience Tone Overview */}
       <section className="glass-card p-6">
-        <h3 className="text-xl font-display font-semibold mb-6">Tone Map</h3>
+        <h3 className="text-xl font-display font-semibold mb-6">Audience Tone Overview</h3>
         
         <div className="grid md:grid-cols-2 gap-6">
           {/* Side A Tones */}
@@ -542,7 +553,7 @@ function CommentIntelligenceSection() {
         </div>
       </section>
 
-      {/* Representative Comments */}
+      {/* Representative Comment Samples */}
       <section className="glass-card p-6">
         <h3 className="text-xl font-display font-semibold mb-6">Representative Comment Samples</h3>
         
