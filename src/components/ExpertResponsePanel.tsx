@@ -30,8 +30,6 @@ interface DraftResponse {
 interface ExpertResponsePanelProps {
   comment?: {
     text: string;
-    likes: number;
-    replies?: number;
   };
 }
 

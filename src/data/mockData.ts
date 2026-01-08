@@ -198,9 +198,9 @@ export const commentIntelligence = {
       { text: "Which experts should I trust? Both sides have PhDs.", frequency: "Moderately observed" },
     ],
     exampleComments: [
-      { text: "I watched 10 videos on this and I'm more confused than when I started...", likes: 2341, side: "neutral" },
-      { text: "One video says AI will cure cancer, the next says it will kill us all. Make it make sense.", likes: 1876, side: "neutral" },
-      { text: "The conflicting information is giving me anxiety honestly", likes: 943, side: "neutral" },
+      { text: "I watched 10 videos on this and I'm more confused than when I started...", side: "neutral" },
+      { text: "One video says AI will cure cancer, the next says it will kill us all. Make it make sense.", side: "neutral" },
+      { text: "The conflicting information is giving me anxiety honestly", side: "neutral" },
     ],
     confusionSpike: [
       { date: "2025-12-01", level: 45 },
@@ -260,28 +260,20 @@ export const commentIntelligence = {
     sideA: [
       {
         text: "As someone who works in AI research, I can tell you the alignment problem is very real. We don't fully understand what these systems are doing.",
-        likes: 4523,
-        replies: 234,
         sentiment: "analytical",
       },
       {
         text: "The fact that AI labs are moving this fast while admitting they can't control these systems is genuinely terrifying.",
-        likes: 3211,
-        replies: 189,
         sentiment: "concerned",
       },
     ],
     sideB: [
       {
         text: "Every new technology has had doomsayers. Remember when people thought trains would make cows stop producing milk? This is the same thing.",
-        likes: 5678,
-        replies: 412,
         sentiment: "dismissive",
       },
       {
         text: "If we pause, China won't. And then we'll have AI developed by a country with no free press or civil liberties concerns. How is that better?",
-        likes: 4892,
-        replies: 356,
         sentiment: "strategic",
       },
     ],
