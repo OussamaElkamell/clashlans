@@ -2,16 +2,16 @@ import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Link, useParams } from "react-router-dom";
-import { 
-  ArrowRight, Download, Share2, AlertTriangle, CheckCircle, 
+import {
+  ArrowRight, Download, Share2, AlertTriangle, CheckCircle,
   TrendingUp, MessageSquare, Eye, Zap, ChevronDown, ChevronUp,
   Info
 } from "lucide-react";
-import { 
-  executiveSummary, 
-  contradictionCards, 
-  narrativeSplitData, 
-  commentIntelligence 
+import {
+  executiveSummary,
+  contradictionCards,
+  narrativeSplitData,
+  commentIntelligence
 } from "@/data/mockData";
 import { cn } from "@/lib/utils";
 import { ExpertResponsePanel } from "@/components/ExpertResponsePanel";
@@ -24,7 +24,7 @@ export default function Results() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar isAuthenticated />
-      
+
       <main className="pt-24 pb-16 px-4">
         <div className="container max-w-7xl">
           {/* Research Disclaimer */}
@@ -49,11 +49,11 @@ export default function Results() {
                     </span>
                     <span className={cn(
                       "inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm",
-                      executiveSummary.confidence === "high" 
+                      executiveSummary.confidence === "high"
                         ? "bg-sentiment-agreement/20 text-sentiment-agreement"
                         : executiveSummary.confidence === "medium"
-                        ? "bg-sentiment-confusion/20 text-sentiment-confusion"
-                        : "bg-muted text-muted-foreground"
+                          ? "bg-sentiment-confusion/20 text-sentiment-confusion"
+                          : "bg-muted text-muted-foreground"
                     )}>
                       {executiveSummary.confidence === "high" ? "High Consistency in Analysis" : executiveSummary.confidence === "medium" ? "Medium Consistency" : "Low Consistency"}
                     </span>
@@ -64,7 +64,7 @@ export default function Results() {
                   <p className="text-xl text-muted-foreground mb-6">
                     We found <span className="text-primary font-semibold">{executiveSummary.contradictionClusters} contradiction analysis groups</span> across {executiveSummary.totalVideosAnalyzed} videos
                   </p>
-                  
+
                   {/* Main Tension */}
                   <div className="p-4 rounded-xl bg-primary/5 border border-primary/20">
                     <p className="text-sm text-muted-foreground mb-1">Main Tension</p>
@@ -117,8 +117,8 @@ export default function Results() {
               onClick={() => setActiveTab("map")}
               className={cn(
                 "px-6 py-3 rounded-xl font-medium transition-all",
-                activeTab === "map" 
-                  ? "bg-primary text-primary-foreground" 
+                activeTab === "map"
+                  ? "bg-primary text-primary-foreground"
                   : "bg-muted text-muted-foreground hover:text-foreground"
               )}
             >
@@ -128,8 +128,8 @@ export default function Results() {
               onClick={() => setActiveTab("comments")}
               className={cn(
                 "px-6 py-3 rounded-xl font-medium transition-all",
-                activeTab === "comments" 
-                  ? "bg-primary text-primary-foreground" 
+                activeTab === "comments"
+                  ? "bg-primary text-primary-foreground"
                   : "bg-muted text-muted-foreground hover:text-foreground"
               )}
             >
@@ -145,7 +145,7 @@ export default function Results() {
                 <div className="space-y-4">
                   {contradictionCards.map((card) => (
                     <div key={card.id} className="glass-card overflow-hidden">
-                      <div 
+                      <div
                         className="p-6 cursor-pointer"
                         onClick={() => setExpandedCard(expandedCard === card.id ? null : card.id)}
                       >
@@ -162,7 +162,7 @@ export default function Results() {
                               </span>
                               <h3 className="font-display font-semibold text-lg">{card.title}</h3>
                             </div>
-                            
+
                             <div className="grid md:grid-cols-2 gap-4">
                               {/* Claim A */}
                               <div className="p-4 rounded-lg bg-narrative-a/5 border border-narrative-a/20 narrative-a">
@@ -172,7 +172,7 @@ export default function Results() {
                                 </div>
                                 <p className="text-sm">{card.claimA}</p>
                               </div>
-                              
+
                               {/* Claim B */}
                               <div className="p-4 rounded-lg bg-violet-accent/5 border border-violet-accent/20 narrative-b">
                                 <div className="flex items-center gap-2 mb-2">
@@ -183,7 +183,7 @@ export default function Results() {
                               </div>
                             </div>
                           </div>
-                          
+
                           <button className="p-2 text-muted-foreground hover:text-foreground transition-colors">
                             {expandedCard === card.id ? (
                               <ChevronUp className="w-5 h-5" />
@@ -204,8 +204,8 @@ export default function Results() {
                               <div className="space-y-3">
                                 {card.videosA.map((video) => (
                                   <div key={video.id} className="flex gap-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
-                                    <img 
-                                      src={video.thumbnail} 
+                                    <img
+                                      src={video.thumbnail}
                                       alt={video.title}
                                       className="w-24 h-14 rounded-md object-cover"
                                     />
@@ -217,15 +217,15 @@ export default function Results() {
                                 ))}
                               </div>
                             </div>
-                            
+
                             {/* Videos B */}
                             <div>
                               <h4 className="font-medium mb-3 text-violet-accent">Top Videos - Side B</h4>
                               <div className="space-y-3">
                                 {card.videosB.map((video) => (
                                   <div key={video.id} className="flex gap-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
-                                    <img 
-                                      src={video.thumbnail} 
+                                    <img
+                                      src={video.thumbnail}
                                       alt={video.title}
                                       className="w-24 h-14 rounded-md object-cover"
                                     />
@@ -238,7 +238,7 @@ export default function Results() {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div className="mt-4 pt-4 border-t border-border">
                             <Link to={`/deep-dive/${card.id}`}>
                               <Button variant="glow-outline" className="group">
@@ -406,9 +406,9 @@ function CommentIntelligenceSection() {
             {commentIntelligence.confusionSignals.exampleComments.map((c, i) => (
               <div key={i} className="p-4 rounded-lg bg-muted/50">
                 <p className="text-sm mb-2">"{c.text}"</p>
-                <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                {/* <div className="flex items-center gap-3 text-xs text-muted-foreground">
                   <span>👍 {c.likes.toLocaleString()}</span>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
@@ -418,7 +418,7 @@ function CommentIntelligenceSection() {
       {/* Agreement & Disagreement Patterns */}
       <section className="glass-card p-6">
         <h3 className="text-xl font-display font-semibold mb-6">Observed Agreement & Disagreement Patterns</h3>
-        
+
         <div className="grid md:grid-cols-2 gap-6">
           {/* Agreements */}
           <div>
@@ -455,7 +455,7 @@ function CommentIntelligenceSection() {
       {/* Narrative Echoes */}
       <section className="glass-card p-6">
         <h3 className="text-xl font-display font-semibold mb-6">Narrative Echoes from Comments</h3>
-        
+
         <div className="grid md:grid-cols-2 gap-6">
           {/* Side A */}
           <div>
@@ -494,7 +494,7 @@ function CommentIntelligenceSection() {
       {/* Audience Tone Overview */}
       <section className="glass-card p-6">
         <h3 className="text-xl font-display font-semibold mb-6">Audience Tone Overview</h3>
-        
+
         <div className="grid md:grid-cols-2 gap-6">
           {/* Side A Tones */}
           <div>
@@ -510,11 +510,11 @@ function CommentIntelligenceSection() {
                     <span className="text-xs text-muted-foreground">{item.level}</span>
                   </div>
                   <div className="h-2 bg-muted rounded-full overflow-hidden">
-                    <div 
+                    <div
                       className="h-full rounded-full transition-all duration-500"
-                      style={{ 
+                      style={{
                         width: `${item.width}%`,
-                        backgroundColor: item.color 
+                        backgroundColor: item.color
                       }}
                     />
                   </div>
@@ -537,11 +537,11 @@ function CommentIntelligenceSection() {
                     <span className="text-xs text-muted-foreground">{item.level}</span>
                   </div>
                   <div className="h-2 bg-muted rounded-full overflow-hidden">
-                    <div 
+                    <div
                       className="h-full rounded-full transition-all duration-500"
-                      style={{ 
+                      style={{
                         width: `${item.width}%`,
-                        backgroundColor: item.color 
+                        backgroundColor: item.color
                       }}
                     />
                   </div>
@@ -555,7 +555,7 @@ function CommentIntelligenceSection() {
       {/* Representative Comment Samples */}
       <section className="glass-card p-6">
         <h3 className="text-xl font-display font-semibold mb-6">Representative Comment Samples</h3>
-        
+
         <div className="grid md:grid-cols-2 gap-6">
           {/* Side A */}
           <div>
@@ -567,11 +567,11 @@ function CommentIntelligenceSection() {
               {commentIntelligence.representativeComments.sideA.map((c, i) => (
                 <div key={i} className="p-4 rounded-lg bg-narrative-a/5 border border-narrative-a/20">
                   <p className="text-sm mb-3">"{c.text}"</p>
-                  <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                  {/* <div className="flex items-center gap-4 text-xs text-muted-foreground">
                     <span>👍 {c.likes.toLocaleString()}</span>
                     <span>💬 {c.replies}</span>
                     <span className="px-2 py-0.5 rounded-full bg-muted capitalize">{c.sentiment}</span>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>
@@ -587,11 +587,11 @@ function CommentIntelligenceSection() {
               {commentIntelligence.representativeComments.sideB.map((c, i) => (
                 <div key={i} className="p-4 rounded-lg bg-violet-accent/5 border border-violet-accent/20">
                   <p className="text-sm mb-3">"{c.text}"</p>
-                  <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                  {/* <div className="flex items-center gap-4 text-xs text-muted-foreground">
                     <span>👍 {c.likes.toLocaleString()}</span>
                     <span>💬 {c.replies}</span>
                     <span className="px-2 py-0.5 rounded-full bg-muted capitalize">{c.sentiment}</span>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>
