@@ -19,102 +19,101 @@ export default function Terms() {
             <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">1. Acceptance of Terms</h2>
               <p className="text-muted-foreground">
-                By accessing or using ClashLens, you agree to be bound by these Terms of Service. If you do not agree 
-                to these terms, please do not use our service.
+                By accessing or using ClashLens, you agree to be bound by these Terms of Service. 
+                If you do not agree, please do not use the service.
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">2. Description of Service</h2>
+              <p className="text-muted-foreground mb-4">
+                ClashLens is a research-oriented platform that analyzes publicly available YouTube content 
+                to help users understand contradictory narratives. The service is intended for educational, 
+                journalistic, and research purposes.
+              </p>
               <p className="text-muted-foreground">
-                ClashLens is a platform that analyzes publicly available YouTube content to identify and present 
-                contradictory narratives. We provide analysis tools for educational, journalistic, and research purposes. 
-                We do not determine which claims are true or false — we help users understand where disagreement exists.
+                ClashLens does not determine the truth or accuracy of claims, promote content, or influence opinions.
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">3. User Responsibilities</h2>
+              <p className="text-muted-foreground mb-4">Users agree to:</p>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>You must provide accurate account information</li>
-                <li>You are responsible for maintaining the security of your account</li>
-                <li>You agree not to use the service for any unlawful purposes</li>
-                <li>You will not attempt to manipulate, spam, or abuse the platform</li>
-                <li>You will not use our service to harass, defame, or harm others</li>
+                <li>Provide accurate account information.</li>
+                <li>Use the platform lawfully and responsibly.</li>
+                <li>Not misuse, spam, manipulate, or abuse YouTube content or APIs.</li>
+                <li>Not use ClashLens to harass, defame, or harm others.</li>
               </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-display font-bold mb-4">4. YouTube API Compliance</h2>
+              <h2 className="text-xl font-display font-bold mb-4">4. YouTube API Services Compliance</h2>
               <p className="text-muted-foreground mb-4">
-                Our service uses YouTube API Services. By using ClashLens, you agree to comply with:
+                ClashLens uses YouTube API Services and complies with:
               </p>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
                 <li>
-                  <a href="https://www.youtube.com/t/terms" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
-                    YouTube Terms of Service
+                  <a href="https://developers.google.com/youtube/terms/api-services-terms-of-service" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                    YouTube API Services Terms of Service
                   </a>
                 </li>
                 <li>
-                  <a href="https://policies.google.com/privacy" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
-                    Google Privacy Policy
+                  <a href="https://developers.google.com/youtube/terms/developer-policies" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                    Google Developer Policies
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/howyoutubeworks/policies/community-guidelines/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                    YouTube Community Guidelines
                   </a>
                 </li>
               </ul>
+              <p className="text-muted-foreground">
+                All YouTube data displayed remains subject to YouTube's terms and ownership.
+              </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-display font-bold mb-4">5. Expert Response Mode</h2>
+              <h2 className="text-xl font-display font-bold mb-4">5. Expert Response Mode (If Enabled)</h2>
               <p className="text-muted-foreground mb-4">
-                If you use the Expert Response Mode feature, you agree to:
+                If using Expert Response Mode, users agree that:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>Manually review and edit all AI-suggested responses before publishing</li>
-                <li>Post only neutral, evidence-based clarifications — not promotional or misleading content</li>
-                <li>Accept that all responses are published under your own YouTube account</li>
-                <li>Comply with YouTube's Community Guidelines and Terms of Service</li>
-                <li>Not use the feature for spam, harassment, or manipulation</li>
+                <li>All responses are manually reviewed before publication.</li>
+                <li>Responses are neutral, factual, and non-promotional.</li>
+                <li>Comments are posted under the user's own YouTube account.</li>
+                <li>The feature must not be used for spam, automation, or manipulation.</li>
               </ul>
             </section>
 
             <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">6. Intellectual Property</h2>
               <p className="text-muted-foreground">
-                ClashLens and its original content, features, and functionality are owned by ClashLens and are protected 
-                by international copyright, trademark, and other intellectual property laws. Analysis results are provided 
-                for your personal or professional use and may not be resold without permission.
+                ClashLens and its original software, features, and functionality are owned by ClashLens. 
+                Analysis outputs are provided for personal or professional use and may not be resold.
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-xl font-display font-bold mb-4">7. Disclaimer</h2>
               <p className="text-muted-foreground">
-                ClashLens provides analytical tools and does not verify the accuracy of claims in analyzed videos. 
-                Our analysis identifies contradictions but does not determine truth or falsity. Users should conduct 
-                their own research and verification. The service is provided "as is" without warranties of any kind.
+                ClashLens provides analytical tools only. Users are responsible for conducting independent 
+                verification of information. The service is provided "as is" without warranties.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-display font-bold mb-4">8. Limitation of Liability</h2>
+              <h2 className="text-xl font-display font-bold mb-4">8. Termination</h2>
               <p className="text-muted-foreground">
-                ClashLens shall not be liable for any indirect, incidental, special, consequential, or punitive damages 
-                resulting from your use of the service. This includes damages for loss of data, profits, or other intangible losses.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-xl font-display font-bold mb-4">9. Termination</h2>
-              <p className="text-muted-foreground">
-                We reserve the right to terminate or suspend your account at any time for violations of these terms or 
-                for any other reason at our sole discretion. Upon termination, your right to use the service will cease immediately.
+                We may suspend or terminate accounts that violate these Terms, applicable laws, or platform policies.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-display font-bold mb-4">10. Contact</h2>
+              <h2 className="text-xl font-display font-bold mb-4">9. Contact</h2>
               <p className="text-muted-foreground">
-                For questions about these Terms, please contact us at{" "}
+                For legal or policy questions, contact:{" "}
                 <a href="mailto:legal@clashlens.com" className="text-primary hover:underline">
                   legal@clashlens.com
                 </a>
