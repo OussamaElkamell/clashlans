@@ -3,10 +3,11 @@ import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Link, useParams } from "react-router-dom";
 import {
-  ArrowRight, Download, Share2,
+  ArrowRight, Share2,
   Eye, ChevronDown, ChevronUp,
   Info, FileText, MessageSquare, Quote, Bookmark
 } from "lucide-react";
+import { WorkspaceNotes } from "@/components/WorkspaceNotes";
 import {
   videoExcerpts,
   commentExcerpts,
@@ -62,11 +63,7 @@ export default function Results() {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col gap-3 lg:min-w-[200px]">
-                  <Button variant="gradient" className="group">
-                    <Download className="w-4 h-4" />
-                    Export Research Summary
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
+                  <WorkspaceNotes />
                   <Button variant="glass">
                     <Share2 className="w-4 h-4" />
                     Share Workspace
@@ -223,7 +220,10 @@ export default function Results() {
 
               {/* Side-by-Side View */}
               <section>
-                <h2 className="text-xl font-display font-semibold mb-6">Side-by-Side Viewpoint Comparison</h2>
+                <h2 className="text-xl font-display font-semibold mb-2">Side-by-Side Viewpoint Comparison</h2>
+                <p className="text-sm text-muted-foreground mb-6">
+                  This view presents user-collected statements side by side for manual comparison. ClashLens does not determine viewpoints or conclusions.
+                </p>
                 <div className="grid lg:grid-cols-2 gap-6">
                   {/* Viewpoint A */}
                   <div className="glass-card p-6 narrative-a">
@@ -397,10 +397,10 @@ function CommentExcerptsSection() {
         </div>
       </section>
 
-      {/* Repeated Phrases (Raw, no counts) */}
+      {/* Example Phrases from Comments */}
       <section className="glass-card p-6">
-        <h3 className="text-xl font-display font-semibold mb-4">Repeated Phrases in Comments</h3>
-        <p className="text-sm text-muted-foreground mb-6">Phrases appearing in selected excerpts (no counts or frequency labels)</p>
+        <h3 className="text-xl font-display font-semibold mb-2">Example Phrases Observed in Selected Comments</h3>
+        <p className="text-sm text-muted-foreground mb-6">Manually selected phrases from user-chosen comments. ClashLens does not aggregate or calculate frequency.</p>
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Video A phrases */}
