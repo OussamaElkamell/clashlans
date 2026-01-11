@@ -82,13 +82,13 @@ export function DemoPreview() {
               </div>
             </div>
 
-            {/* Confusion Indicator */}
+            {/* Example Comment */}
             <div className="mt-8 p-4 rounded-xl bg-sentiment-confusion/10 border border-sentiment-confusion/20 flex items-start gap-3">
               <AlertTriangle className="w-5 h-5 text-sentiment-confusion flex-shrink-0 mt-0.5" />
               <div>
-                <p className="font-medium text-sentiment-confusion mb-1">High Audience Confusion Indicator Detected</p>
+                <p className="font-medium text-sentiment-confusion mb-1">Example Comment Expressing Uncertainty</p>
                 <p className="text-sm text-muted-foreground">
-                  "So should I be worried about AI or not? Every video says something different." — 847 similar comments observed
+                  "So should I be worried about AI or not? Every video says something different."
                 </p>
               </div>
             </div>

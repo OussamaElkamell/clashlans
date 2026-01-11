@@ -69,7 +69,7 @@ export function WorkspaceNotes() {
           <div className="flex items-start gap-2">
             <Info className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
             <p className="text-xs text-muted-foreground">
-              This document contains user-written research notes and cited public sources. Notes are session-based and do not trigger any data retrieval.
+              This document contains user-written research notes and cited public sources.
             </p>
           </div>
         </div>

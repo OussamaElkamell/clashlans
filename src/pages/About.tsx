@@ -51,7 +51,7 @@ export default function About() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">•</span>
-                <span>Analyze audience reactions and confusion in comment sections</span>
+                <span>Explore selected audience comments to understand differing interpretations</span>
               </li>
             </ul>
           </section>
